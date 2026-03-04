@@ -1,0 +1,15 @@
+
+<div class="card">
+  <h2>Snapshots</h2>
+  <div class="grid grid-2">
+    <div>
+      <label>Protect Product ID</label>
+      <input class="input" [(ngModel)]="productId" />
+    </div>
+  </div>
+  <div style="margin-top:14px; display:flex; gap:12px;">
+    <button class="button" (click)="load()">Load Snapshots</button>
+  </div>
+  <pre *ngIf="data" style="white-space: pre-wrap;">{{ data | json }}</pre>
+  <p *ngIf="message">{{message}}</p>
+</div>

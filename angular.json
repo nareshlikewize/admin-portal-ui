@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/angular.json",
   "version": 1,
   "projects": {
-    "admin-portal-ui": {
+    "admin-portal-ui-clean": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -10,7 +10,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/admin-portal-ui",
+            "outputPath": "dist/admin-portal-ui-clean",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [],
@@ -26,13 +26,6 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                }
-              ],
               "outputHashing": "all"
             }
           }
@@ -40,16 +33,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "admin-portal-ui:build"
+            "browserTarget": "admin-portal-ui-clean:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "admin-portal-ui:build:production"
+              "browserTarget": "admin-portal-ui-clean:build:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "admin-portal-ui"
+  "defaultProject": "admin-portal-ui-clean",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,24 @@
+
+<div class="card">
+  <h2>Contracts & Pricing</h2>
+  <div class="grid grid-2">
+    <div>
+      <label>Protect Product ID</label>
+      <input class="input" [(ngModel)]="model.protect_product_id" />
+    </div>
+    <div>
+      <label>Contract Type</label>
+      <select class="input" [(ngModel)]="model.contract_type">
+        <option>Pricing</option>
+        <option>ClaimLimit</option>
+      </select>
+    </div>
+  </div>
+  <label>Payload (JSON)</label>
+  <textarea class="input" rows="10" [(ngModel)]="model.payloadText"></textarea>
+  <div style="margin-top:14px; display:flex; gap:12px;">
+    <button class="button" (click)="save()">Save Contract</button>
+    <button class="button" style="background:#22c55e" (click)="load()">Load</button>
+  </div>
+  <p *ngIf="message">{{message}}</p>
+</div>
